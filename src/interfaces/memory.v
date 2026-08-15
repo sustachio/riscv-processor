@@ -43,10 +43,14 @@ module memory_controller(
   output [9:0] LEDR,
 
   // vga
-  output [7:0] vga_pen_x,
-  output [7:0] vga_pen_y,
-  output [7:0] vga_pen_color,
+  output [8:0] vga_pen_x,
+  output [8:0] vga_pen_y,
+  output [3:0] vga_pen_color,
   output vga_pen_draw,
+
+  output [3:0] vga_palette_index,
+  output [11:0] vga_palette_color,
+  output vga_write_palette,
 
   output [6:0] ps2_get_key,
   input ps2_key_pressed
@@ -155,6 +159,10 @@ module memory_controller(
     .vga_pen_y(vga_pen_y),
     .vga_pen_color(vga_pen_color),
     .vga_pen_draw(vga_pen_draw),
+
+    .vga_palette_index(vga_palette_index),
+    .vga_palette_color(vga_palette_color),
+    .vga_write_palette(vga_write_palette),
 
     .ps2_get_key(ps2_get_key),
     .ps2_key_pressed(ps2_key_pressed)

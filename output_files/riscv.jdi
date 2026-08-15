@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="fd435324863d0208da20"/>
+    <hash md5_digest_80b="b4e9543b2c93448983c8"/>
   </project>
   <file_info>
     <file device="EP2C20F484C7" path="riscv.sof" usercode="0xFFFFFFFF"/>

@@ -2,29 +2,49 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\Seth Mueller\Documents\fpga\simulation\modelsim
+Z0 dC:\Users\Seth Mueller\Documents\riscv-processor\simulation\modelsim
 vbutton_debounce
-IMAK7@J7DR=8Y8FFzYzAgT0
+IO3BYM<L_8TO`z2jfS]C[d2
 VhF?FliBXT>_QgMnXOhBKO0
-Z1 dC:\Users\Seth Mueller\Documents\fpga\simulation\modelsim
-Z2 w1781585073
-Z3 8C:/Users/Seth Mueller/Documents/fpga/src/utils.v
-Z4 FC:/Users/Seth Mueller/Documents/fpga/src/utils.v
+Z1 dC:\Users\Seth Mueller\Documents\riscv-processor\simulation\modelsim
+Z2 w1785897094
+Z3 8C:/Users/Seth Mueller/Documents/riscv-processor/src/utils.v
+Z4 FC:/Users/Seth Mueller/Documents/riscv-processor/src/utils.v
 L0 22
 Z5 OV;L;10.1d;51
 r1
 31
-Z6 !s108 1783143432.233000
-Z7 !s107 C:/Users/Seth Mueller/Documents/fpga/src/utils.v|
-Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/fpga/src|+incdir+C:/Users/Seth Mueller/Documents/fpga|C:/Users/Seth Mueller/Documents/fpga/src/utils.v|
+Z6 !s108 1785901839.177000
+Z7 !s107 C:/Users/Seth Mueller/Documents/riscv-processor/src/utils.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/utils.v|
 Z9 o-vlog01compat -work work -O0
-Z10 !s92 -vlog01compat -work work {+incdir+C:/Users/Seth Mueller/Documents/fpga/src} {+incdir+C:/Users/Seth Mueller/Documents/fpga} -O0
+Z10 !s92 -vlog01compat -work work {+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src} {+incdir+C:/Users/Seth Mueller/Documents/riscv-processor} -O0
 !i10b 1
-!s100 :9PXCzjz8lb>iK?W2i@YV0
+!s100 g1aJ>8OoUnMX?<:UXQ77T1
 !s85 0
 !s101 -O0
+vdecoder
+ILT0K5k2UUc_ISN;i6kmMJ3
+VnQb2mQQCabWWS8zm4K5l]0
+R1
+w1785900629
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/decoder.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/decoder.v
+L0 3
+R5
+r1
+31
+R9
+Z11 !s92 -vlog01compat -work work {+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline} {+incdir+C:/Users/Seth Mueller/Documents/riscv-processor} -O0
+!i10b 1
+!s100 WNfJ1ej:n30A]J0Ofm2iN3
+!s85 0
+!s108 1785901839.745000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/decoder.v|
+!s101 -O0
 vdisplay_32bit_7seg
-I6;CdSjkAjY@P>Dg6WC8`?1
+Ic@4W8e06BLVQSTal03BMP3
 VZk0kGbEc77YKHUK4nXdCl0
 R1
 R2
@@ -40,31 +60,51 @@ R8
 R9
 R10
 !i10b 1
-!s100 zohIBcSz[f=o>H9e:ilP70
+!s100 5c`PU_@G05haEhnV`jh`@2
 !s85 0
 !s101 -O0
+vexecute
+I^I6c2?51f9e6U6=[BVGQB3
+VIzV;fe<O7^k[HY6o_I;D71
+R1
+w1785898039
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/execute.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/execute.v
+L0 3
+R5
+r1
+31
+R9
+R11
+!i10b 1
+!s100 ZbPa33k^B]odSXd_m<hBQ3
+!s85 0
+!s108 1785901839.795000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/execute.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/execute.v|
+!s101 -O0
 vflash_interface32bit
-IJHWfbT^4S^^JDU@m9CM7B2
+Ijh:^En2FKMGU6n1b7ZT_;2
 V:4EcJji>0d:CNl_<ZgdFb1
 R1
-w1783100575
-8C:/Users/Seth Mueller/Documents/fpga/src/interfaces/flash.v
-FC:/Users/Seth Mueller/Documents/fpga/src/interfaces/flash.v
+Z12 w1785871277
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/flash.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/flash.v
 L0 2
 R5
 r1
 31
 R9
-Z11 !s92 -vlog01compat -work work {+incdir+C:/Users/Seth Mueller/Documents/fpga/src/interfaces} {+incdir+C:/Users/Seth Mueller/Documents/fpga} -O0
+Z13 !s92 -vlog01compat -work work {+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces} {+incdir+C:/Users/Seth Mueller/Documents/riscv-processor} -O0
 !i10b 1
-!s100 B5gH;ge<FYJ8Wni8aH:H73
+!s100 ;CQLH1EPzC6MzCQCbF0Sa2
 !s85 0
-!s108 1783143432.362000
-!s107 C:/Users/Seth Mueller/Documents/fpga/src/interfaces/flash.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/fpga/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/fpga|C:/Users/Seth Mueller/Documents/fpga/src/interfaces/flash.v|
+!s108 1785901839.297000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/flash.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/flash.v|
 !s101 -O0
 vhex_to_7seg
-IbnWRO:Y4WiHN;3>B4EC3M3
+IocT`<E@MjfAAUV0J6gl0X0
 VAAlmEUFLG5;Z`DC9baZg?0
 R1
 R2
@@ -80,51 +120,211 @@ R8
 R9
 R10
 !i10b 1
-!s100 nDbK<2Mfoi@7YRlI5Qm:53
+!s100 8lGGBI]Kie@<XRz[1Ni>31
+!s85 0
+!s101 -O0
+vinstruction_fetch_and_pc
+I;i:PHnHoUB]436j5FDd?^1
+V??f=UON0DODljN^WbS;>C1
+R1
+Z14 w1785871402
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/fetch.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/fetch.v
+L0 5
+R5
+r1
+31
+R9
+R11
+!i10b 1
+!s100 Rj4KNR_c2g>0MJ6LQ8T:d3
+!s85 0
+!s108 1785901839.698000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/fetch.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/fetch.v|
+!s101 -O0
+vmemory_access
+I<gOoBBBP7AiG`>[Xo2>Z60
+VZ0f3<l159mOQlXBKCjzVa3
+R1
+R14
+Z15 8C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/memoryaccess.v
+Z16 FC:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/memoryaccess.v
+L0 82
+R5
+r1
+31
+Z17 !s108 1785901839.846000
+Z18 !s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/memoryaccess.v|
+Z19 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/memoryaccess.v|
+R9
+R11
+!i10b 1
+!s100 e908RYdmn`H<Ijg>3E10T2
 !s85 0
 !s101 -O0
 vmemory_controller
-!i10b 1
-!s100 OD87iP3R^ZfPgj2`7^?[22
-IVIjgKUnfziQ@IN_5EeIc`0
-VbA1J[P^CUT^0V2<Ia3O6R2
+I_ef]4c;S0XcVj:Oo8KzZh1
+VMbKbH:MJf9K8g2U^N^2Dh1
 R1
-w1783101523
-8C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory.v
-FC:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory.v
+w1785882139
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v
 L0 8
 R5
 r1
-!s85 0
 31
-!s108 1783143432.519000
-!s107 C:/Users/Seth Mueller/Documents/fpga/global_constants.vh|C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/fpga/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/fpga|C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory.v|
-!s101 -O0
 R9
-R11
+R13
+!i10b 1
+!s100 nc>o=Vd>f58P]TCHb0Q423
+!s85 0
+!s108 1785901839.442000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v|
+!s101 -O0
 vmemory_mapped_io
-Ik[:oX3fNDOeZN2TEDzg]e3
-VEBWYdb;P:=goJ8kMAhdGa1
+Id?JGMDTg@;1a88G`7bQDL3
+VNnVmZ=Pz1bJiN38X`^keE1
 R1
-w1782698472
-8C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory_mapped_io.v
-FC:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory_mapped_io.v
+w1785882282
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory_mapped_io.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory_mapped_io.v
 L0 2
 R5
 r1
 31
 R9
+R13
+!i10b 1
+!s100 ]J4NBi^f_`<3Zn?jWUDmR2
+!s85 0
+!s108 1785901839.249000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory_mapped_io.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory_mapped_io.v|
+!s101 -O0
+vmemory_multiplexer
+IZnUbYO<Z<703il8YY<23<1
+V45Q01BzDC8^FiMd2`=A2D3
+R1
+R14
+R15
+R16
+L0 3
+R5
+r1
+31
+R17
+R18
+R19
+R9
 R11
 !i10b 1
-!s100 4]<4L_kWm5Db4Uz7FMAhC3
+!s100 iZYH;>5ai1fTlf9_LlZKl2
 !s85 0
-!s108 1783143432.311000
-!s107 C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory_mapped_io.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/fpga/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/fpga|C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory_mapped_io.v|
+!s101 -O0
+vprocessor_state_manager
+ICMNEH7N^U]ID6Y[c36Oj=0
+V_H@z61:0^?ZCeXKMa=8WP2
+R1
+w1785900147
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/processorstate.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/processorstate.v
+L0 3
+R5
+r1
+31
+R9
+R11
+!i10b 1
+!s100 83KLcd]RB]f^c=NJ0k3J^0
+!s85 0
+!s108 1785901839.596000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/processorstate.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/processorstate.v|
+!s101 -O0
+vps2_interface
+ICEc6VYTdXcAm4V9CM=SW?0
+VBNocg>G>K?]UEzh8GG5JU0
+R1
+w1785897092
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/ps2.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/ps2.v
+L0 6
+R5
+r1
+31
+R9
+R13
+!i10b 1
+!s100 cg9i5hL_i4CgVY6EmnSnf1
+!s85 0
+!s108 1785901839.542000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/ps2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/ps2.v|
+!s101 -O0
+vreg_bank
+IIAe>=DE6aEkBb1L3Y>8<T3
+VhW;f5_]LF]`^;@1>T[54P0
+R1
+R14
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/regbank.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/regbank.v
+L0 7
+R5
+r1
+31
+R9
+R11
+!i10b 1
+!s100 jL9ZE]HS:X57@X<K5PFT[0
+!s85 0
+!s108 1785901839.644000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/regbank.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/regbank.v|
+!s101 -O0
+vreg_writeback
+!i10b 1
+!s100 <QO7]_<AD:_N:IWl^XE481
+ID6ZWXdczkZ0KI`[bAckO>3
+V[g9S?WiTi@>GeZ654IYE:1
+R1
+R14
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/writeback.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/writeback.v
+L0 3
+R5
+r1
+!s85 0
+31
+!s108 1785901839.905000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/writeback.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/writeback.v|
+!s101 -O0
+R9
+R11
+vriscv
+I0EfQVL]CUe^ma^:m?eKdU0
+ValD?TUzBIj;<S27dW[TR>1
+R1
+w1785900165
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/riscv.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/riscv.v
+L0 3
+R5
+r1
+31
+R9
+R10
+!i10b 1
+!s100 8SCWh=;O_i^m5?HK;J90A3
+!s85 0
+!s108 1785901839.491000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/global_constants.vh|C:/Users/Seth Mueller/Documents/riscv-processor/src/riscv.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/riscv.v|
 !s101 -O0
 vrst_n_init
-Ik?ZE4<M4Q<B7`1HG>_8^92
+IOOTcN@;e5Bf>JC><K6<F=0
 VN6OjeM^1^fo:1<mjzDjh;0
 R1
 R2
@@ -140,46 +340,46 @@ R8
 R9
 R10
 !i10b 1
-!s100 ]?:UDAO9:o:b@h?9j3;@13
+!s100 IHMJaPWPjD=82zQ;SIaN91
 !s85 0
 !s101 -O0
 vsram_interface32bit
-I5iGm8mJc^bkNHe@VdkLkA3
+IXC3XE177a@AOWeYoFV=SX0
 VL0QLC>W4[X<_FB`@QZ0Gd1
 R1
-w1782697944
-8C:/Users/Seth Mueller/Documents/fpga/src/interfaces/sram.v
-FC:/Users/Seth Mueller/Documents/fpga/src/interfaces/sram.v
+R12
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/sram.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/sram.v
 L0 4
 R5
 r1
 31
 R9
-R11
+R13
 !i10b 1
-!s100 En3hdd:T1P1DLKghF@>SJ0
+!s100 HKY4Ae6Ozo2ncj9@7O<ZR2
 !s85 0
-!s108 1783143432.412000
-!s107 C:/Users/Seth Mueller/Documents/fpga/src/interfaces/sram.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/fpga/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/fpga|C:/Users/Seth Mueller/Documents/fpga/src/interfaces/sram.v|
+!s108 1785901839.347000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/sram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/sram.v|
 !s101 -O0
 vvga_interface
-IGb^>iQDJ0B6ECG=`:EZ:g3
-VOHDC37j;`=@GiN>U[zo]12
+I1YP?I3OTmXDTSzF]D8bKQ1
+VeX3E[hA^?F@i>f:LPkPRl0
 R1
-w1782698482
-8C:/Users/Seth Mueller/Documents/fpga/src/interfaces/vga.v
-FC:/Users/Seth Mueller/Documents/fpga/src/interfaces/vga.v
+w1785898129
+8C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/vga.v
+FC:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/vga.v
 L0 1
 R5
 r1
 31
 R9
-R11
+R13
 !i10b 1
-!s100 S[78;RO;AHD]IV9nYZglR3
+!s100 R1Ao^j22EZMOQiKZU4Q1J1
 !s85 0
-!s108 1783143432.464000
-!s107 C:/Users/Seth Mueller/Documents/fpga/src/interfaces/vga.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/fpga/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/fpga|C:/Users/Seth Mueller/Documents/fpga/src/interfaces/vga.v|
+!s108 1785901839.396000
+!s107 C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/vga.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces|+incdir+C:/Users/Seth Mueller/Documents/riscv-processor|C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/vga.v|
 !s101 -O0

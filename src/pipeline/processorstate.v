@@ -5,12 +5,9 @@ module processor_state_manager(
   input rst_n,
 
   input mem_finished,
-  input [5:0] decoder_op,
-
-  input [1:0] next_privilege,
+  input [5:0] decoder_next_op,
 
   output reg [2:0] processor_state,
-  output reg [1:0] processor_privilege,
 
   input TEST_ALLOW_WB_COMPLETE
 );
@@ -23,15 +20,19 @@ module processor_state_manager(
 
       `FETCH: begin
         if (mem_finished) begin
-          case (decoder_op)
+          next_state = `DECODE;
+        end
+        else
+          next_state = `FETCH;
+      end
+
+      `DECODE: begin
+          case (decoder_next_op)
             `OP_LW, `OP_LB, `OP_LH, `OP_LBU, `OP_LHU, `OP_SW, `OP_SB, `OP_SH:
               next_state = `START_MEM;
             default:
               next_state = `WRITEBACK;
           endcase
-        end
-        else
-          next_state = `FETCH;
       end
 
       `START_MEM:
@@ -58,12 +59,9 @@ module processor_state_manager(
   end
 
   always @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
+    if (!rst_n)
       processor_state <= `START_FETCH;
-      processor_privilege <= `PRIV_MACHINE;
-    end else begin
-      if (processor_state == `WRITEBACK && next_state == `START_FETCH)
-        processor_privilege <= next_privilege;
+    else begin
       processor_state <= next_state; 
     end
   end

@@ -48,119 +48,13 @@
 `define OP_CSRRSI 45
 `define OP_CSRRCI 46
 
-`define OP_MRET 47
-`define OP_WFI 48
-
-//////////////////// processor_state
+// processor_state
 `define START_FETCH 0
 `define FETCH 1
+`define DECODE 5
 `define START_MEM 2
 `define MEM_ACCESS 3
 `define WRITEBACK 4
-
-//////////////////// processor_privilege
-`define PRIV_MACHINE    2'b11
-`define PRIV_SUPERVISOR 2'b01
-`define PRIV_USER       2'b00
-
-///////////////// CSRs
-
-`define CSR_CYCLE	12'hC00
-`define CSR_CYCLEH	12'hC80
-`define CSR_TIME	12'hC01
-`define CSR_TIMEH	12'hC81
-`define CSR_INSTRET	12'hC02
-`define CSR_INSTRETH	12'hC82
-//hpmcounter3-31	0xC03-0xC1F
-//hpmcounter3-31h	0xC83-0xC9F
-`define CSR_MISA	12'h301
-`define CSR_MVENDORID	12'hF11
-`define CSR_MARCHID	12'hF12
-`define CSR_MIMPID	12'hF13
-`define CSR_MHARTID	12'hF14
-`define CSR_MSTATUS	12'h300
-`define CSR_MSTATUSH	12'h310
-`define CSR_MTVEC	12'h305
-`define CSR_MEDELEG 	12'h302
-`define CSR_MEDELEGH	12'h312
-`define CSR_MIDELEG 	12'h303
-`define CSR_MIP	12'h344
-`define CSR_MIE	12'h304
-`define CSR_MCYCLE	12'hB00
-`define CSR_MCYCLEH	12'hB80
-`define CSR_MINSTRET	12'hB02
-`define CSR_MINSTRETH	12'hB82
-//mhpmcounter3-31	0xB03-0xB1F
-//mhpmcounter3-31h	0xB84-0xB9F
-//mhpevent3-31	0x324-0x33F
-//mhpevent3-31h	0x324-0x33F
-`define CSR_MCOUNTEREN	12'h306
-`define CSR_MCOUNTINHIBIT	12'h320
-`define CSR_MSCRATCH	12'h340
-`define CSR_MEPC	12'h341
-`define CSR_MCAUSE	12'h342
-`define CSR_MTVAL	12'h343
-`define CSR_MCONFIGPTR	12'hF15
-`define CSR_MENVCFG	12'h30A
-`define CSR_MENVCFGH 	12'h31A
-`define CSR_MSECCFG	12'h747
-`define CSR_MSECCFGH	12'h757
-
-
-///// csr bit fields indicies
-// mstatus
-`define CSR_MSTATUS_SDR 24
-`define CSR_MSTATUS_SPELP 23
-`define CSR_MSTATUS_TSR 22
-`define CSR_MSTATUS_TW 21
-`define CSR_MSTATUS_TVM 20
-`define CSR_MSTATUS_MXR 19
-`define CSR_MSTATUS_SUM 18
-`define CSR_MSTATUS_MPRV 17
-`define CSR_MSTATUS_XS 16 // 16:15
-`define CSR_MSTATUS_FS 14 // 14:13
-`define CSR_MSTATUS_MPP 12 // 12:11
-`define CSR_MSTATUS_VS 10 // 10:9
-`define CSR_MSTATUS_SPP 8
-`define CSR_MSTATUS_MPIE 7
-`define CSR_MSTATUS_UBE 6
-`define CSR_MSTATUS_SPIE 5
-`define CSR_MSTATUS_WPRI 4
-`define CSR_MSTATUS_MIE 3
-`define CSR_MSTATUS_SIE 1
-
-// mip/mie
-`define CSR_MIP_LCOFIP 13
-`define CSR_MIE_LCOFIE 13
-`define CSR_MIP_MEIP 11
-`define CSR_MIE_MEIE 11
-`define CSR_MIP_SEIP 9
-`define CSR_MIE_SEIE 9
-`define CSR_MIP_MTIP 7
-`define CSR_MIE_MTIE 7
-`define CSR_MIP_STIP 5
-`define CSR_MIE_STIE 5
-`define CSR_MIP_MSIP 3
-`define CSR_MIE_MSIE 3
-`define CSR_MIP_SSIP 1
-`define CSR_MIE_SSIE 1
-
-////////////// trap mcause
-// exceptions
-`define TRAPCAUSE_ECALL_U 8
-`define TRAPCAUSE_ECALL_S 9
-`define TRAPCAUSE_ECALL_M 11
-`define TRAPCAUSE_EBREAK 3
-`define TRAPCAUSE_ILLEGAL_INSTRUCTION 2
-`define TRAPCAUSE_INSTRUCTION_MISALIGNED 0
-// interupts
-`define TRAPCAUSE_MEI ((32'b1 << 31) & 32'd11)
-`define TRAPCAUSE_MTI ((32'b1 << 31) & 32'd7)
-
-////////////// mtvec modes
-`define MTVEC_DIRECT 0
-`define MTVEC_VECTORED 1
-
 
 ////////// KEYS //////////
 // compiled from http://www.technoblogy.com/show?4QEL, thank you internet site! :3

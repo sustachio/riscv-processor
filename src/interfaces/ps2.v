@@ -55,7 +55,7 @@ module ps2_interface(
     else if (state == WAIT_READ_BYTE1)
       reset_counter <= 0;
     else if (reset_counter[22] != 1'b1)
-      reset_counter <= reset_counter + 1;
+      reset_counter <= reset_counter + 23'd1;
   end
 
   always @(*) begin

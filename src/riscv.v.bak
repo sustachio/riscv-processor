@@ -1,5 +1,3 @@
-`include "global_constants.vh"
-
 module riscv(
 	input CLOCK_50,
 
@@ -34,51 +32,32 @@ module riscv(
   output [3:0] VGA_G,
   output [3:0] VGA_B,
   output VGA_HS,
-  output VGA_VS,
-	
-	// PS/2 keyboard
-	input PS2_CLK,
-	input PS2_DAT
+  output VGA_VS
 );
   //////////////////////////////////
 
-  wire clk;
-  wire pll_locked;
-
-  plltest plltest (
-    .areset(~rst_n),
-    .inclk0(CLOCK_50),
-    .c0(clk),
-    .locked(pll_locked)
-  );
-
-
-  reg TEST_ALLOW_WB_COMPLETE;
+  wire TEST_ALLOW_WB_COMPLETE;
   wire [4:0] TEST_REG_IN;
   wire [31:0] TEST_REG_OUT;
 
   wire rst_n;
 
   rst_n_init rst_n_init(
-    .clk(clk),
+    .clk(CLOCK_50),
     .rst_n(rst_n)
   );
 
   wire [2:0] processor_state;
-  wire [1:0] processor_privilege;
-  wire [1:0] next_privilege;
   wire [5:0] decoder_op;
   wire mem_mux_finished;
   processor_state_manager processor_state_manager(
-    .clk(clk),
+    .clk(CLOCK_50),
     .rst_n(rst_n),
 
     .mem_finished(mem_mux_finished),
     .decoder_op(decoder_op),
-    .next_privilege(next_privilege),
 
     .processor_state(processor_state),
-    .processor_privilege(processor_privilege),
 
     .TEST_ALLOW_WB_COMPLETE(TEST_ALLOW_WB_COMPLETE)
   );
@@ -96,16 +75,8 @@ module riscv(
 
   wire memory_busy;
   wire memory_finished;
-
-  wire [7:0] vga_pen_x;
-  wire [7:0] vga_pen_y;
-  wire [7:0] vga_pen_color;
-  wire vga_pen_draw;
-
-  wire [6:0] ps2_get_key;
-  wire ps2_key_pressed;
   memory_controller mem(
-    .clk(clk),
+    .clk(CLOCK_50),
     .rst_n(rst_n),
 
     .write_request(memory_write_request),
@@ -138,15 +109,7 @@ module riscv(
     .SRAM_CE_N(SRAM_CE_N),
 
     // memory mapped i/o
-    .LEDR(LEDR),
-
-    .vga_pen_x(vga_pen_x),
-    .vga_pen_y(vga_pen_y),
-    .vga_pen_color(vga_pen_color),
-    .vga_pen_draw(vga_pen_draw),
-
-    .ps2_get_key(ps2_get_key),
-    .ps2_key_pressed(ps2_key_pressed)
+    .LEDR(LEDR)
   );
 
   wire fetch_read_request;
@@ -196,7 +159,7 @@ module riscv(
   wire [4:0] rd_writeback_reg;
   wire [31:0] rd_writeback_val;
   reg_bank reg_bank(
-    .clk(clk),
+    .clk(CLOCK_50),
     .rst_n(rst_n),
 
     .processor_state(processor_state),
@@ -218,7 +181,7 @@ module riscv(
   wire [31:0] pc;
   wire [31:0] instruction32;
   instruction_fetch_and_pc instruction_fetch_and_pc(
-    .clk(clk),
+    .clk(CLOCK_50),
     .rst_n(rst_n),
 
     .processor_state(processor_state),
@@ -241,7 +204,6 @@ module riscv(
   wire [31:0] decoder_rs1;
   wire [31:0] decoder_rs2;
   wire [31:0] decoder_imm;
-  wire [11:0] decoder_csr_i;
   decoder decoder(
     .rst_n(rst_n),
 
@@ -251,107 +213,12 @@ module riscv(
     .rs1(decoder_rs1),
     .rs2(decoder_rs2),
     .imm(decoder_imm),
-    .csr_i(decoder_csr_i),
     
     .rs1_bank_interface_in(rs1_bank_interface_in),
     .rs2_bank_interface_in(rs2_bank_interface_in),
     .rs1_bank_interface_out(rs1_bank_interface_out),
     .rs2_bank_interface_out(rs2_bank_interface_out)
   );
-
-  wire [31:0] csr_read;
-  wire illegal_csr_access;
-
-  wire timer_irq = 0;
-  wire external_irq = 0;
-
-  wire [63:0] mstatus;
-  wire [31:0] mtvec;
-  wire [31:0] mcause;
-  wire [31:0] mtval;
-  wire [31:0] mepc;
-  wire [31:0] mie;
-  wire [31:0] mip;
-  wire [31:0] mscratch;
-
-  wire [63:0] next_mstatus;
-  wire [31:0] next_mtvec;
-  wire [31:0] next_mcause;
-  wire [31:0] next_mtval;
-  wire [31:0] next_mepc;
-
-  wire [31:0] TEST_PROBE_NEW_CSR_VAL;
-  control_status_registers control_status_registers(
-    .clk(clk),
-    .rst_n(rst_n),
-
-    .processor_state(processor_state),
-    .processor_privilege(processor_privilege),
-    .TEST_ALLOW_WB_COMPLETE(TEST_ALLOW_WB_COMPLETE),
-
-    .timer_irq(timer_irq),
-    .external_irq(external_irq),
-
-    .op(decoder_op),
-    .imm(decoder_imm),
-    .rs1_val(decoder_rs1),
-    .csr_i(decoder_csr_i), // only valid on csr instructions
-
-    .csr_read(csr_read),
-
-    // direct outputs
-    .mstatus(mstatus),
-    .mtvec(mtvec),
-    .mcause(mcause),
-    .mtval(mtval),
-    .mepc(mepc),
-    .mie(mie),
-    .mip(mip),
-    .mscratch(mscratch),
-
-    // set by trap handler
-    .next_mstatus(next_mstatus),
-    .next_mtvec(next_mtvec),
-    .next_mcause(next_mcause),
-    .next_mtval(next_mtval),
-    .next_mepc(next_mepc),
-
-    .illegal_csr_access(illegal_csr_access),
-    .TEST_PROBE_NEW_CSR_VAL(TEST_PROBE_NEW_CSR_VAL)
-  );
-
-	wire [31:0] execute_next_pc;
-  trap_manager trap_manager(
-    .clk(clk),
-    .rst_n(rst_n),
-
-    .pc(pc),
-    .execute_next_pc(execute_next_pc),
-    .next_pc(next_pc),
-
-    .op(decoder_op),
-
-    .illegal_csr_access(illegal_csr_access),
-
-    .processor_state(processor_state),
-    .processor_privilege(processor_privilege),
-    .next_privilege(next_privilege),
-
-    .mstatus(mstatus),
-    .mtvec(mtvec),
-    .mcause(mcause),
-    .mtval(mtval),
-    .mepc(mepc),
-    .mip(mip),
-    .mie(mie),
-
-    .next_mstatus(next_mstatus),
-    .next_mtvec(next_mtvec),
-    .next_mcause(next_mcause),
-    .next_mtval(next_mtval),
-    .next_mepc(next_mepc)
-  );
-
 
   wire [31:0] execute_result;
   execute execute(
@@ -364,16 +231,14 @@ module riscv(
     .imm(decoder_imm),
     .pc(pc),
 
-    .csr_read(csr_read),
-
     .res(execute_result),
 
-    .next_pc(execute_next_pc)
+    .next_pc(next_pc)
   );
 
   wire [31:0] memory_access_result;
   memory_access memory_access(
-    .clk(clk),
+    .clk(CLOCK_50),
     .rst_n(rst_n),
 
     .processor_state(processor_state),
@@ -395,7 +260,7 @@ module riscv(
   );
 
   reg_writeback reg_writeback(
-    .clk(clk),
+    .clk(CLOCK_50),
     .rst_n(rst_n),
 
     .processor_state(processor_state),
@@ -408,33 +273,7 @@ module riscv(
     .reg_bank_rd(rd_writeback_reg),
     .reg_bank_val(rd_writeback_val)
   );
-
-
-  /////////// HARDWARE INTERFACES /////////
-  vga_interface vga_interface(
-    .rst_n(rst_n),
-    .clk(clk),
-
-    .VGA_R(VGA_R),
-    .VGA_G(VGA_G),
-    .VGA_B(VGA_B),
-    .VGA_HS(VGA_HS),
-    .VGA_VS(VGA_VS),
-		.pen_x(vga_pen_x),
-		.pen_y(vga_pen_y),
-		.pen_color(vga_pen_color),
-		.pen_draw(vga_pen_draw)
-  );
-
-  ps2_interface ps2_interface(
-    .rst_n(rst_n),
-    .clk(clk),
-
-    .get_key(ps2_get_key),
-    .key_pressed(ps2_key_pressed),
-    .PS2_CLK(PS2_CLK),
-    .PS2_DAT(PS2_DAT)
-  );
+  
 
   //////// DEBUGING ///////////
 
@@ -444,7 +283,6 @@ module riscv(
 
   // KEY[0] - allow WB (step)
   // KEY[1] - press to look at significant two bytes
-  // KEY[2] - hold for debug mode (allow EBREAKs)
 
   // LEDG[7:0] - TEST_REG_OUT[7:0] 
 
@@ -467,59 +305,43 @@ module riscv(
 
   reg [31:0] hex_num;
   always @(*) begin
-    if (KEY[3]) begin
-      case (SW[9:6])
-        4'b0000: hex_num = decoder_op;
-        4'b0001: hex_num = TEST_REG_OUT;
-        4'b0010: hex_num = processor_state;
-        4'b0011: hex_num = mem_mux_finished;
-        4'b0100: hex_num = rs1_bank_interface_in;
-        4'b0101: hex_num = rs2_bank_interface_in;
-        4'b0110: hex_num = rs1_bank_interface_out;
-        4'b0111: hex_num = rs2_bank_interface_out;
-        4'b1000: hex_num = rd_writeback_reg;
-        4'b1001: hex_num = rd_writeback_val;
-        4'b1010: hex_num = pc;
-        4'b1011: hex_num = next_pc;
-        4'b1100: hex_num = instruction32;
-        4'b1101: hex_num = decoder_imm;
-        4'b1110: hex_num = execute_result;
+    case (SW[9:6])
+      4'b0000: hex_num = decoder_op;
+      4'b0001: hex_num = TEST_REG_OUT;
+      4'b0010: hex_num = processor_state;
+      4'b0011: hex_num = mem_mux_finished;
+      4'b0100: hex_num = rs1_bank_interface_in;
+      4'b0101: hex_num = rs2_bank_interface_in;
+      4'b0110: hex_num = rs1_bank_interface_out;
+      4'b0111: hex_num = rs2_bank_interface_out;
+      4'b1000: hex_num = rd_writeback_reg;
+      4'b1001: hex_num = rd_writeback_val;
+      4'b1010: hex_num = pc;
+      4'b1011: hex_num = next_pc;
+      4'b1100: hex_num = instruction32;
+      4'b1101: hex_num = decoder_imm;
+      4'b1110: hex_num = execute_result;
 
-        default: hex_num = 0;
-      endcase
-    end else begin
-      case (SW[9:6])
-        4'b0000: hex_num = decoder_csr_i;
-        4'b0001: hex_num = processor_privilege;
-        4'b0010: hex_num = next_privilege;
-        4'b0011: hex_num = illegal_csr_access;
-        4'b0100: hex_num = memory_data_out;
-        4'b0101: hex_num = memory_data_in;
-        4'b0110: hex_num = memory_addr;
-
-        default: hex_num = 0;
-      endcase
-    end
+      default: hex_num = 0;
+    endcase
   end
 	
   wire hex_upp_sel;
 
   assign TEST_REG_IN = SW[4:0];
 	
-	assign LEDG = {ps2_get_key, ps2_key_pressed};
+	assign LEDG = TEST_REG_OUT[7:0];
 	
   wire step;
-  always @(*) begin
-    TEST_ALLOW_WB_COMPLETE = (SW[5] && ((decoder_op != `OP_EBREAK) || ~SW[2])) || step;
-  end
+  assign TEST_ALLOW_WB_COMPLETE = SW[5] | step;
 	button_debounce #(.PRECISE_CYCLE_TRIGGER(1)) sram_command_trigger(
-		.clk(clk),
+		.clk(CLOCK_50),
 		.button(!KEY[0]),
 		.debounced(step)
 	);
 
 	button_debounce #(.PRECISE_CYCLE_TRIGGER(0)) num_display_control(
-		.clk(clk),
+		.clk(CLOCK_50),
 		.button(!KEY[1]),
 		.debounced(hex_upp_sel)
 	);
@@ -533,9 +355,96 @@ module riscv(
 		.upper_sel(hex_upp_sel)
 	);
 
+  // video testing
+  vga_fun vga_fun(
+    .rst_n(rst_n),
+    .clk(CLOCK_50),
+
+    .VGA_R(VGA_R),
+    .VGA_G(VGA_G),
+    .VGA_B(VGA_B),
+    .VGA_HS(VGA_HS),
+    .VGA_VS(VGA_VS)
+  );
 
 endmodule
 
+module vga_fun(
+  input rst_n,
+  input clk,
+
+  output reg [3:0] VGA_R,
+  output reg [3:0] VGA_G,
+  output reg [3:0] VGA_B,
+  output reg VGA_HS,
+  output reg VGA_VS
+);
+  // horizontal timing (in pixles/25MHz clock cycles):
+  // (0-95)    sync - 96
+  // (96-143)  back porch (right after sync) - 48
+  // (144-783) active video 640 (640 pixels wide)
+  // (784-799) front porch (right before sync) - 16
+
+  // vertical timing (in lines)
+  // (0-1)     sync - 2
+  // (2-32)    back porch - 31
+  // (33-512)  active video - 480 (480 lines tall)
+  // (513-523) front porch - 11
+
+  // counters, not exactly pixles/lines, include porch/sync timing
+  reg [9:0] x_counter;
+  reg [9:0] y_counter;
+
+  reg [1:0] slower_clock; // counter, look at 2nd bit
+
+  always @(posedge clk) begin
+    if (!rst_n)
+      slower_clock <= 0
+    else
+      slower_clock <= slower_clock + 1;
+  end
+
+  always @(posedge slower_clock[1]) begin
+    if (!rst_n) begin
+      x_counter <= 0;
+      y_counter <= 0;
+    end else begin
+      x_counter <= x_counter + 1;
+
+      if (x_counter >= 799) begin
+        x_counter <= 0;
+        y_counter <= y_counter + 1;
+      end
+      if (y_counter >= 523) y_counter <= 0;
+    end
+  end
+
+  always @(*) begin
+    VGA_HS = 1;
+    VGA_VS = 1;
+    VGA_R = 0;
+    VGA_G = 0;
+    VGA_B = 0;
+
+    if (rst_n) begin
+      // H sync
+      if (x_counter <= 95)
+        VGA_HS = 0;
+
+      // V sync
+      if (y_counter <= 1)
+        VGA_VS = 0;
+
+      // not in porches
+      if (144 <= x_counter && x_counter <= 783 &&
+          33  <= y_counter && y_counter <= 512) begin
+        VGA_R = x_counter[7:4];
+        VGA_G = y_counter[7:4];
+        VGA_B = y_counter[3:0];
+      end
+    end
+  end
+endmodule
 
 // night sky https://www.asciiart.eu/ascii-night-sky-generator
 /*

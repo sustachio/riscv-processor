@@ -49,7 +49,7 @@ module instruction_fetch_and_pc(
 						instruction32 = 0;
 				end
 
-				`START_MEM, `MEM_ACCESS, `WRITEBACK: begin
+				`DECODE, `START_MEM, `MEM_ACCESS, `WRITEBACK: begin
 					mem_read_request = 0;
 					mem_addr = 0;
 					instruction32 = saved_instruction32;

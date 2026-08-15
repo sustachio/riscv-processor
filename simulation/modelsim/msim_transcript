@@ -10,7 +10,7 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src {C:/Users/Seth Mueller/Documents/fpga/src/utils.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src {C:/Users/Seth Mueller/Documents/riscv-processor/src/utils.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module rst_n_init
 # -- Compiling module button_debounce
@@ -21,45 +21,41 @@
 # 	rst_n_init
 # 	button_debounce
 # 	display_32bit_7seg
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory_mapped_io.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory_mapped_io.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module memory_mapped_io
 # 
 # Top level modules:
 # 	memory_mapped_io
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/flash.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/flash.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module flash_interface32bit
 # 
 # Top level modules:
 # 	flash_interface32bit
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/sram.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/sram.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module sram_interface32bit
 # 
 # Top level modules:
 # 	sram_interface32bit
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/vga.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/vga.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module vga_interface
 # 
 # Top level modules:
 # 	vga_interface
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src {C:/Users/Seth Mueller/Documents/fpga/src/plltest.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module plltest
-# 
-# Top level modules:
-# 	plltest
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# ** Error: C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory.v(1): Cannot open `include file "C:/Users/Seth Mueller/Documents/fpga/src/interfaces/global_constants.vh".
+# ** Error: C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v(1): Cannot open `include file "C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/global_constants.vh".
 # -- Compiling module memory_controller
 # ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./riscv_run_msim_rtl_verilog.do line 14
+# Error in macro ./riscv_run_msim_rtl_verilog.do line 13
 # C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
 #     while executing
-# "vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory..."
+# "vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces {C:/Users/Seth Mueller/Documents/riscv-processor..."
+restart -f
+# No Design Loaded!
 do compile.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
@@ -68,7 +64,7 @@ do compile.do
 # vmap work rtl_work
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src +incdir+C:/Users/Seth\ Mueller/Documents/fpga {C:/Users/Seth Mueller/Documents/fpga/src/utils.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/utils.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module rst_n_init
 # -- Compiling module button_debounce
@@ -79,42 +75,525 @@ do compile.do
 # 	rst_n_init
 # 	button_debounce
 # 	display_32bit_7seg
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory_mapped_io.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/interfaces/memory_mapped_io.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module memory_mapped_io
 # 
 # Top level modules:
 # 	memory_mapped_io
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/flash.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/interfaces/flash.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module flash_interface32bit
 # 
 # Top level modules:
 # 	flash_interface32bit
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/sram.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/interfaces/sram.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module sram_interface32bit
 # 
 # Top level modules:
 # 	sram_interface32bit
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/vga.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/interfaces/vga.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module vga_interface
 # 
 # Top level modules:
 # 	vga_interface
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga {C:/Users/Seth Mueller/Documents/fpga/src/interfaces/memory.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/interfaces/memory.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module memory_controller
 # 
 # Top level modules:
 # 	memory_controller
-# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src +incdir+C:/Users/Seth\ Mueller/Documents/fpga {C:/Users/Seth Mueller/Documents/fpga/src/riscv.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/riscv.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module riscv
-# ** Error: C:/Users/Seth Mueller/Documents/fpga/src/riscv.v(60): 'rst_n' already declared in this scope (riscv).
+# 
+# Top level modules:
+# 	riscv
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/interfaces/ps2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ps2_interface
+# 
+# Top level modules:
+# 	ps2_interface
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/pipeline/processorstate.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module processor_state_manager
+# 
+# Top level modules:
+# 	processor_state_manager
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/pipeline/regbank.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module reg_bank
+# 
+# Top level modules:
+# 	reg_bank
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/pipeline/fetch.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module instruction_fetch_and_pc
+# 
+# Top level modules:
+# 	instruction_fetch_and_pc
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/pipeline/decoder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module decoder
+# 
+# Top level modules:
+# 	decoder
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/pipeline/execute.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module execute
+# 
+# Top level modules:
+# 	execute
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/pipeline/memoryaccess.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_multiplexer
+# -- Compiling module memory_access
+# 
+# Top level modules:
+# 	memory_multiplexer
+# 	memory_access
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/fpga\ -\ Copy {C:/Users/Seth Mueller/Documents/fpga\ -\ Copy/src/pipeline/writeback.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module reg_writeback
+# 
+# Top level modules:
+# 	reg_writeback
+vsim work.riscv
+# vsim work.riscv 
+# Loading work.riscv
+# Loading work.rst_n_init
+# Loading work.processor_state_manager
+# Loading work.memory_controller
+# Loading work.flash_interface32bit
+# Loading work.sram_interface32bit
+# Loading work.memory_mapped_io
+# Loading work.memory_multiplexer
+# Loading work.reg_bank
+# Loading work.instruction_fetch_and_pc
+# Loading work.decoder
+# ** Error: (vsim-3033) C:/Users/Seth Mueller/Documents/fpga - Copy/src/riscv.v(329): Instantiation of 'control_status_registers' failed. The design unit was not found.
+# 
+#         Region: /riscv
+#         Searched libraries:
+#             C:/Users/Seth Mueller/Documents/riscv-processor/simulation/modelsim/rtl_work
+# Loading work.execute
+# Loading work.memory_access
+# ** Error: (vsim-3033) C:/Users/Seth Mueller/Documents/fpga - Copy/src/riscv.v(405): Instantiation of 'trap_manager' failed. The design unit was not found.
+# 
+#         Region: /riscv
+#         Searched libraries:
+#             C:/Users/Seth Mueller/Documents/riscv-processor/simulation/modelsim/rtl_work
+# Loading work.reg_writeback
+# Loading work.vga_interface
+# Loading work.ps2_interface
+# Loading work.button_debounce
+# Loading work.display_32bit_7seg
+# Loading work.hex_to_7seg
+# Error loading design
+vsim rtl_work.riscv
+# vsim rtl_work.riscv 
+# Loading rtl_work.riscv
+# Loading rtl_work.rst_n_init
+# Loading rtl_work.processor_state_manager
+# Loading rtl_work.memory_controller
+# Loading rtl_work.flash_interface32bit
+# Loading rtl_work.sram_interface32bit
+# Loading rtl_work.memory_mapped_io
+# Loading rtl_work.memory_multiplexer
+# Loading rtl_work.reg_bank
+# Loading rtl_work.instruction_fetch_and_pc
+# Loading rtl_work.decoder
+# ** Error: (vsim-3033) C:/Users/Seth Mueller/Documents/fpga - Copy/src/riscv.v(329): Instantiation of 'control_status_registers' failed. The design unit was not found.
+# 
+#         Region: /riscv
+#         Searched libraries:
+#             C:/Users/Seth Mueller/Documents/riscv-processor/simulation/modelsim/rtl_work
+# Loading rtl_work.execute
+# Loading rtl_work.memory_access
+# ** Error: (vsim-3033) C:/Users/Seth Mueller/Documents/fpga - Copy/src/riscv.v(405): Instantiation of 'trap_manager' failed. The design unit was not found.
+# 
+#         Region: /riscv
+#         Searched libraries:
+#             C:/Users/Seth Mueller/Documents/riscv-processor/simulation/modelsim/rtl_work
+# Loading rtl_work.reg_writeback
+# Loading rtl_work.vga_interface
+# Loading rtl_work.ps2_interface
+# Loading rtl_work.button_debounce
+# Loading rtl_work.display_32bit_7seg
+# Loading rtl_work.hex_to_7seg
+# Error loading design
+do compile.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor\ Copy/src +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor\ Copy {C:/Users/Seth Mueller/Documents/riscv-processor\ Copy/src/utils.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: (vlog-7) Failed to open design unit file "C:/Users/Seth Mueller/Documents/riscv-processor\ Copy/src/utils.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
 # ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./compile.do line 14
+# Error in macro ./compile.do line 8
 # C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
 #     while executing
-# "vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/fpga/src +incdir+C:/Users/Seth\ Mueller/Documents/fpga {C:/Users/Seth Mueller/D..."
+# "vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor\ Copy/src +incdir+C:/Users/Seth\ Mueller/Documents/riscv-proces..."
+do compile.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/utils.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module rst_n_init
+# -- Compiling module button_debounce
+# -- Compiling module hex_to_7seg
+# -- Compiling module display_32bit_7seg
+# 
+# Top level modules:
+# 	rst_n_init
+# 	button_debounce
+# 	display_32bit_7seg
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory_mapped_io.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_mapped_io
+# 
+# Top level modules:
+# 	memory_mapped_io
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/flash.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module flash_interface32bit
+# 
+# Top level modules:
+# 	flash_interface32bit
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/sram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sram_interface32bit
+# 
+# Top level modules:
+# 	sram_interface32bit
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/vga.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_interface
+# 
+# Top level modules:
+# 	vga_interface
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_controller
+# 
+# Top level modules:
+# 	memory_controller
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/riscv.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module riscv
+# 
+# Top level modules:
+# 	riscv
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/ps2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ps2_interface
+# 
+# Top level modules:
+# 	ps2_interface
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/processorstate.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module processor_state_manager
+# 
+# Top level modules:
+# 	processor_state_manager
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/regbank.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module reg_bank
+# 
+# Top level modules:
+# 	reg_bank
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/fetch.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module instruction_fetch_and_pc
+# 
+# Top level modules:
+# 	instruction_fetch_and_pc
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/decoder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module decoder
+# 
+# Top level modules:
+# 	decoder
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/execute.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module execute
+# 
+# Top level modules:
+# 	execute
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/memoryaccess.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_multiplexer
+# -- Compiling module memory_access
+# 
+# Top level modules:
+# 	memory_multiplexer
+# 	memory_access
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/writeback.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module reg_writeback
+# 
+# Top level modules:
+# 	reg_writeback
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/csrs.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: (vlog-7) Failed to open design unit file "C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/csrs.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./compile.do line 23
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-pro..."
+do compile.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/utils.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module rst_n_init
+# -- Compiling module button_debounce
+# -- Compiling module hex_to_7seg
+# -- Compiling module display_32bit_7seg
+# 
+# Top level modules:
+# 	rst_n_init
+# 	button_debounce
+# 	display_32bit_7seg
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory_mapped_io.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_mapped_io
+# 
+# Top level modules:
+# 	memory_mapped_io
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/flash.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module flash_interface32bit
+# 
+# Top level modules:
+# 	flash_interface32bit
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/sram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sram_interface32bit
+# 
+# Top level modules:
+# 	sram_interface32bit
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/vga.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_interface
+# 
+# Top level modules:
+# 	vga_interface
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_controller
+# 
+# Top level modules:
+# 	memory_controller
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/riscv.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module riscv
+# 
+# Top level modules:
+# 	riscv
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/interfaces +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/ps2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ps2_interface
+# 
+# Top level modules:
+# 	ps2_interface
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/processorstate.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module processor_state_manager
+# 
+# Top level modules:
+# 	processor_state_manager
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/regbank.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module reg_bank
+# 
+# Top level modules:
+# 	reg_bank
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/fetch.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module instruction_fetch_and_pc
+# 
+# Top level modules:
+# 	instruction_fetch_and_pc
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/decoder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module decoder
+# 
+# Top level modules:
+# 	decoder
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/execute.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module execute
+# 
+# Top level modules:
+# 	execute
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/memoryaccess.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_multiplexer
+# -- Compiling module memory_access
+# 
+# Top level modules:
+# 	memory_multiplexer
+# 	memory_access
+# vlog -vlog01compat -work work +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor/src/pipeline +incdir+C:/Users/Seth\ Mueller/Documents/riscv-processor {C:/Users/Seth Mueller/Documents/riscv-processor/src/pipeline/writeback.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module reg_writeback
+# 
+# Top level modules:
+# 	reg_writeback
+vsim work.riscv
+# vsim work.riscv 
+# Loading work.riscv
+# Loading work.rst_n_init
+# Loading work.processor_state_manager
+# Loading work.memory_controller
+# Loading work.flash_interface32bit
+# Loading work.sram_interface32bit
+# Loading work.memory_mapped_io
+# Loading work.memory_multiplexer
+# Loading work.reg_bank
+# Loading work.instruction_fetch_and_pc
+# Loading work.decoder
+# Loading work.execute
+# Loading work.memory_access
+# Loading work.reg_writeback
+# Loading work.vga_interface
+# Loading work.ps2_interface
+# Loading work.button_debounce
+# Loading work.display_32bit_7seg
+# Loading work.hex_to_7seg
+# ** Warning: (vsim-3017) C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v(122): [TFMPC] - Too few port connections. Expected 17, found 16.
+# 
+#         Region: /riscv/mem/sram32
+# ** Warning: (vsim-3722) C:/Users/Seth Mueller/Documents/riscv-processor/src/interfaces/memory.v(122): [TFMPC] - Missing connection for port 'TEST_EXPOSE_STATE'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Seth Mueller/Documents/riscv-processor/src/riscv.v(297): [TFMPC] - Too few port connections. Expected 15, found 14.
+# 
+#         Region: /riscv/memory_access
+# ** Warning: (vsim-3722) C:/Users/Seth Mueller/Documents/riscv-processor/src/riscv.v(297): [TFMPC] - Missing connection for port 'mem_access_busy'.
+# 
+add wave -position end  sim:/riscv/CLOCK_50
+add wave -position end  sim:/riscv/FL_ADDR
+add wave -position end  sim:/riscv/FL_DQ
+add wave -position end  sim:/riscv/FL_OE_N
+add wave -position end  sim:/riscv/FL_RST_N
+add wave -position end  sim:/riscv/FL_WE_N
+add wave -position end  sim:/riscv/SRAM_ADDR
+add wave -position end  sim:/riscv/SRAM_DQ
+add wave -position end  sim:/riscv/SRAM_WE_N
+add wave -position end  sim:/riscv/SRAM_OE_N
+add wave -position end  sim:/riscv/SRAM_UB_N
+add wave -position end  sim:/riscv/SRAM_LB_N
+add wave -position end  sim:/riscv/SRAM_CE_N
+add wave -position end  sim:/riscv/SW
+add wave -position end  sim:/riscv/KEY
+add wave -position end  sim:/riscv/LEDR
+add wave -position end  sim:/riscv/LEDG
+add wave -position end  sim:/riscv/HEX0
+add wave -position end  sim:/riscv/HEX1
+add wave -position end  sim:/riscv/HEX2
+add wave -position end  sim:/riscv/HEX3
+add wave -position end  sim:/riscv/VGA_R
+add wave -position end  sim:/riscv/VGA_G
+add wave -position end  sim:/riscv/VGA_B
+add wave -position end  sim:/riscv/VGA_HS
+add wave -position end  sim:/riscv/VGA_VS
+add wave -position end  sim:/riscv/PS2_CLK
+add wave -position end  sim:/riscv/PS2_DAT
+add wave -position end  sim:/riscv/TEST_ALLOW_WB_COMPLETE
+add wave -position end  sim:/riscv/TEST_REG_IN
+add wave -position end  sim:/riscv/TEST_REG_OUT
+add wave -position end  sim:/riscv/rst_n
+add wave -position end  sim:/riscv/processor_state
+add wave -position end  sim:/riscv/decoder_op
+add wave -position end  sim:/riscv/decoder_next_op
+add wave -position end  sim:/riscv/mem_mux_finished
+add wave -position end  sim:/riscv/memory_write_request
+add wave -position end  sim:/riscv/memory_read_request
+add wave -position end  sim:/riscv/memory_byte_mode
+add wave -position end  sim:/riscv/memory_addr
+add wave -position end  sim:/riscv/memory_data_in
+add wave -position end  sim:/riscv/memory_data_out
+add wave -position end  sim:/riscv/memory_busy
+add wave -position end  sim:/riscv/memory_finished
+add wave -position end  sim:/riscv/vga_pen_x
+add wave -position end  sim:/riscv/vga_pen_y
+add wave -position end  sim:/riscv/vga_pen_color
+add wave -position end  sim:/riscv/vga_pen_draw
+add wave -position end  sim:/riscv/vga_palette_index
+add wave -position end  sim:/riscv/vga_palette_color
+add wave -position end  sim:/riscv/vga_write_palette
+add wave -position end  sim:/riscv/ps2_get_key
+add wave -position end  sim:/riscv/ps2_key_pressed
+add wave -position end  sim:/riscv/fetch_read_request
+add wave -position end  sim:/riscv/fetch_addr
+add wave -position end  sim:/riscv/fetch_result
+add wave -position end  sim:/riscv/mem_access_read_request
+add wave -position end  sim:/riscv/mem_access_write_request
+add wave -position end  sim:/riscv/mem_access_addr
+add wave -position end  sim:/riscv/mem_access_data_in
+add wave -position end  sim:/riscv/mem_access_byte_mode
+add wave -position end  sim:/riscv/mem_access_data_out
+add wave -position end  sim:/riscv/rs1_bank_interface_in
+add wave -position end  sim:/riscv/rs2_bank_interface_in
+add wave -position end  sim:/riscv/rs1_bank_interface_out
+add wave -position end  sim:/riscv/rs2_bank_interface_out
+add wave -position end  sim:/riscv/rd_writeback_reg
+add wave -position end  sim:/riscv/rd_writeback_val
+add wave -position end  sim:/riscv/next_pc
+add wave -position end  sim:/riscv/pc
+add wave -position end  sim:/riscv/instruction32
+add wave -position end  sim:/riscv/decoder_rd
+add wave -position end  sim:/riscv/decoder_rs1
+add wave -position end  sim:/riscv/decoder_rs2
+add wave -position end  sim:/riscv/decoder_imm
+add wave -position end  sim:/riscv/execute_result
+add wave -position end  sim:/riscv/temp_jal_sum
+add wave -position end  sim:/riscv/memory_access_result
+add wave -position end  sim:/riscv/hex_num
+add wave -position end  sim:/riscv/hex_upp_sel
+add wave -position end  sim:/riscv/step
+add wave -position end  sim:/riscv/decoder/clk
+add wave -position end  sim:/riscv/decoder/rst_n
+add wave -position end  sim:/riscv/decoder/processor_state
+add wave -position end  sim:/riscv/decoder/instruction32
+add wave -position end  sim:/riscv/decoder/op
+add wave -position end  sim:/riscv/decoder/next_op
+add wave -position end  sim:/riscv/decoder/rd
+add wave -position end  sim:/riscv/decoder/rs1
+add wave -position end  sim:/riscv/decoder/rs2
+add wave -position end  sim:/riscv/decoder/imm
+add wave -position end  sim:/riscv/decoder/rs1_bank_interface_in
+add wave -position end  sim:/riscv/decoder/rs2_bank_interface_in
+add wave -position end  sim:/riscv/decoder/rs1_bank_interface_out
+add wave -position end  sim:/riscv/decoder/rs2_bank_interface_out
+add wave -position end  sim:/riscv/decoder/next_rd
+add wave -position end  sim:/riscv/decoder/next_rs1
+add wave -position end  sim:/riscv/decoder/next_rs2
+add wave -position end  sim:/riscv/decoder/next_imm
+force -deposit sim:/riscv/CLOCK_50 0 0, 1 10 ns -r 20 ns
+force -freeze sim:/riscv/TEST_ALLOW_WB_COMPLETE 1 0
+force -freeze sim:/riscv/fetch_result 00001001100000000010000010000011 0
+run 1050 ns

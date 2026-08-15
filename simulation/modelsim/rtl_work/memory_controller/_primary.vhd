@@ -25,10 +25,13 @@ entity memory_controller is
         SRAM_LB_N       : out    vl_logic;
         SRAM_CE_N       : out    vl_logic;
         LEDR            : out    vl_logic_vector(9 downto 0);
-        vga_pen_x       : out    vl_logic_vector(7 downto 0);
-        vga_pen_y       : out    vl_logic_vector(7 downto 0);
-        vga_pen_color   : out    vl_logic_vector(7 downto 0);
+        vga_pen_x       : out    vl_logic_vector(8 downto 0);
+        vga_pen_y       : out    vl_logic_vector(8 downto 0);
+        vga_pen_color   : out    vl_logic_vector(2 downto 0);
         vga_pen_draw    : out    vl_logic;
+        vga_palette_index: out    vl_logic_vector(2 downto 0);
+        vga_palette_color: out    vl_logic_vector(11 downto 0);
+        vga_write_palette: out    vl_logic;
         ps2_get_key     : out    vl_logic_vector(6 downto 0);
         ps2_key_pressed : in     vl_logic
     );

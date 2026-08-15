@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Jul 04 00:41:40 2026
+Analysis & Synthesis Status : Successful - Wed Aug 05 09:53:25 2026
 Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : riscv
 Top-level Entity Name : riscv
 Family : Cyclone II
-Total logic elements : 9,122
-    Total combinational functions : 8,080
-    Dedicated logic registers : 1,802
-Total registers : 1802
+Total logic elements : 7,258
+    Total combinational functions : 6,071
+    Dedicated logic registers : 1,860
+Total registers : 1860
 Total pins : 149
 Total virtual pins : 0
-Total memory bits : 153,600
+Total memory bits : 176,000
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

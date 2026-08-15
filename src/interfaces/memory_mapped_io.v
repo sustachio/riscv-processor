@@ -16,10 +16,14 @@ module memory_mapped_io(
   // interfaces
   output reg [9:0] LEDR,
 
-  output reg [7:0] vga_pen_x,
-  output reg [7:0] vga_pen_y,
-  output reg [7:0] vga_pen_color,
+  output reg [8:0] vga_pen_x,
+  output reg [8:0] vga_pen_y,
+  output reg [3:0] vga_pen_color,
   output reg vga_pen_draw,
+
+  output reg [3:0] vga_palette_index,
+  output reg [11:0] vga_palette_color,
+  output reg vga_write_palette,
 
   output reg [6:0] ps2_get_key,
   input ps2_key_pressed
@@ -29,6 +33,7 @@ module memory_mapped_io(
 	localparam WRITE_LEDR = 3'd1;
   localparam WRITE_VGA  = 3'd2;
   localparam READ_PS2  = 3'd3;
+  localparam WRITE_VGA_PALETTE = 3'd4;
 	
 	reg [2:0] state = IDLE;
 	reg [2:0] next_state = IDLE;
@@ -47,15 +52,11 @@ module memory_mapped_io(
             next_state = WRITE_VGA;
           else if (read_request && addr >= 32'h30000008 && addr <= 32'h3000006E)
             next_state = READ_PS2;
+          else if (write_request && addr == 32'h30000080)
+            next_state = WRITE_VGA_PALETTE;
         end
       
-        WRITE_LEDR:
-          next_state = IDLE;
-
-        WRITE_VGA:
-          next_state = IDLE;
-
-        READ_PS2:
+        WRITE_LEDR, WRITE_VGA, READ_PS2, WRITE_VGA_PALETTE:
           next_state = IDLE;
 
         default: begin end
@@ -72,8 +73,12 @@ module memory_mapped_io(
 
       vga_pen_x <= 8'd0;
       vga_pen_y <= 8'd0;
-      vga_pen_color <= 8'd0;
+      vga_pen_color <= 4'd0;
       vga_pen_draw <= 1'b0;
+
+      vga_write_palette <= 1'd0;
+      vga_palette_color <= 12'd0;
+      vga_palette_index <= 4'd0;
 
       ps2_get_key <= 7'd0;
 		end else begin
@@ -105,14 +110,20 @@ module memory_mapped_io(
           end
 
           WRITE_VGA: begin
-            vga_pen_x <= data_in[23:16];
-            vga_pen_y <= data_in[15:8];
-            vga_pen_color <= data_in[7:0];
+            vga_pen_x <= data_in[21:13];
+            vga_pen_y <= data_in[12:4];
+            vga_pen_color <= data_in[3:0];
             vga_pen_draw <= 1'b1;
           end
 
           READ_PS2: begin
             ps2_get_key <= addr - 32'h30000008;
+          end
+
+          WRITE_VGA_PALETTE: begin
+            vga_palette_color <= data_in[11:0];
+            vga_palette_index <= data_in[15:12];
+            vga_write_palette <= 1'b1;
           end
 				endcase
 			end
